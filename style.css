@@ -1,0 +1,100 @@
+body {
+  font-family: 'Fira Mono', 'Consolas', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+  color: #39ff14;
+  width: 400px; /* Fixed width for popup */
+  min-height: 500px;
+}
+.header {
+  background: #111;
+  padding: 24px 0 12px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border-bottom: 2px solid #39ff14;
+}
+.header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  letter-spacing: 2px;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14, 0 0 2px #fff;
+}
+.header p {
+  color: #39ff14;
+  margin: 8px 0 0 0;
+  font-size: 1.1em;
+  text-shadow: 0 0 4px #39ff14;
+}
+.container {
+  padding: 24px;
+  background: #181818;
+  margin: 0; /* Remove margin for popup context */
+  min-height: 380px;
+}
+label {
+  font-weight: bold;
+  color: #39ff14;
+  text-shadow: 0 0 2px #39ff14;
+}
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 16px 0;
+  border: 1.5px solid #39ff14;
+  border-radius: 6px;
+  background: #111;
+  color: #39ff14;
+  font-size: 1em;
+  box-shadow: 0 0 8px #39ff1433;
+  box-sizing: border-box; /* Important for padding */
+}
+input[type="submit"] {
+  background: #39ff14;
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px #39ff14;
+  transition: background 0.2s, color 0.2s;
+  width: 100%;
+}
+input[type="submit"]:hover {
+  background: #181818;
+  color: #39ff14;
+  border: 1.5px solid #39ff14;
+}
+.result-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 24px;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #39ff14;
+}
+.result-table th, .result-table td {
+  border: 1px solid #39ff14;
+  padding: 10px;
+  text-align: center;
+}
+.result-table th {
+  background: #181818;
+  color: #39ff14;
+  font-size: 1.1em;
+  border-bottom: 2px solid #39ff14;
+}
+.open {
+  color: #39ff14;
+  font-weight: bold;
+  text-shadow: 0 0 4px #39ff14;
+}
+.closed {
+  color: #ff1744;
+  font-weight: bold;
+  text-shadow: 0 0 4px #ff1744;
+}

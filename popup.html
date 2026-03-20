@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>gpscan - Port Scanner</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <img src="icon.jpg" alt="Logo" style="width: 48px; height: 48px; margin-bottom: 10px;">
+    <h1>gpscan</h1>
+    <p> Web-based Port Scanner</p>
+  </div>
+  <div class="container">
+    <form id="scanForm">
+      <label for="target">Target IP/Domain:</label><br>
+      <input type="text" id="target" name="target" placeholder="e.g. example.com" required><br><br>
+
+      <label for="ports">Ports (e.g. 80,443 or 80-90):</label><br>
+      <input type="text" id="ports" name="ports" value="80,443,8080" required><br><br>
+
+      <label for="timeout">Timeout (seconds):</label><br>
+      <input type="number" id="timeout" name="timeout" min="1" max="10" value="1"><br><br>
+
+      <input type="submit" value="Scan" id="scanBtn">
+    </form>
+
+    <div id="error-msg" style="color: #ff1744; display: none; margin-top: 10px;"></div>
+
+    <table class="result-table" id="resultsTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Port</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="resultsBody">
+        <!-- Results will be injected here -->
+      </tbody>
+    </table>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
