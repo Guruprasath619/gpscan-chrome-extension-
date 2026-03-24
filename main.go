@@ -64,12 +64,10 @@ func enableCORS(w *http.ResponseWriter) {
 func apiScanHandler(w http.ResponseWriter, r *http.Request) {
 	// Debug log
 	log.Printf("Received request from %s: %s %s", r.RemoteAddr, r.Method, r.URL.Path)
-
 	enableCORS(&w)
 	if r.Method == "OPTIONS" {
 		return
 	}
-
 	target := r.URL.Query().Get("target")
 	portsStr := r.URL.Query().Get("ports")
 	timeoutStr := r.URL.Query().Get("timeout")
@@ -79,13 +77,11 @@ func apiScanHandler(w http.ResponseWriter, r *http.Request) {
 			timeout = time.Duration(t) * time.Second
 		}
 	}
-
 	ports, err := parsePorts(portsStr)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-
 	var results []ScanResult
 	// Basic concurrency for speed
 	resultChan := make(chan ScanResult)
@@ -99,11 +95,9 @@ func apiScanHandler(w http.ResponseWriter, r *http.Request) {
 			resultChan <- ScanResult{Port: p, Status: status}
 		}(port)
 	}
-
 	for range ports {
 		results = append(results, <-resultChan)
 	}
-
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(results)
 }
@@ -114,12 +108,9 @@ func main() {
 		fmt.Fprintf(w, "GPSCAN Backend is Running! (HTTP/2 + TLS)\n\nEndpoint: /api/scan")
 	})
 	mux.HandleFunc("/api/scan", apiScanHandler)
-
 	// Fallback/Main HTTPS server standard (Go automatically enables HTTP/2 over TLS)
-	fmt.Println("gpscan (Go Backend) running on https://localhost:7373 (HTTP/2 enabled)")
-	fmt.Println("Make sure you have 'cert.pem' and 'key.pem' in this directory.")
-
-	err := http.ListenAndServeTLS(":7373", "cert.pem", "key.pem", mux)
+	fmt.Println("gpscan (Go Backend) running on https://localhost:7373 (HTTP/2 enabled")
+	err := http.ListenAndServe(":7373", mux)
 	if err != nil {
 		log.Fatal(err)
 	}
