@@ -18,7 +18,7 @@ Since this extension is in development, you can install it manually in Chrome:
 
    1. Clone the repository:
    
-   git clone https://github.com
+   git clone https://github.com/Guruprasath619/gpscan-chrome-extension- 
    
    2. Open Google Chrome and navigate to chrome://extensions/.
    3. Enable Developer mode (toggle switch in the top right).
