@@ -3,7 +3,7 @@ GPScan Chrome Extension
 A lightweight and efficient Chrome extension developed by Guruprasath .
 🚀 Features
 
-* Real-time Scanning: [Briefly describe a feature].
+* Real-time Scanning: .
 * Clean UI: Built with simple HTML/CSS for a seamless user experience.
 * Open Source: Licensed under the Apache-2.0 License.
 
@@ -29,8 +29,7 @@ Since this extension is in development, you can install it manually in Chrome:
 
 * manifest.json: Extension metadata and permissions.
 * popup.html/js/css: The main interface when clicking the extension icon.
-* main.go: [Explain the role of Go in this project, e.g., "The backend processing logic"].
-* cert.pem/key.pem: Security certificates for [Explain usage].
+* main.go:.
 
 🤝 Contributing
 This is an open-source project! Feel free to:
@@ -44,14 +43,5 @@ This is an open-source project! Feel free to:
 📄 License
 Distributed under the Apache-2.0 License. See LICENSE for more information.
 ------------------------------
-How to add this to your GitHub:
-
-   1. Create a new file in your local folder named README.md.
-   2. Paste the content above and save it.
-   3. In your terminal, run:
-   
-   git add README.md
-   git commit -m "Add professional README"
-   git push origin main
    
   
